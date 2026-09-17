@@ -1,11 +1,567 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>FIERCE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      var saved = localStorage.getItem('fierceTheme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <title>FIERCE — UMass CICS Residential Academic Program</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="description" content="FIERCE is a UMass CICS Residential Academic Program for incoming computer science and informatics students — build real friendships, confidence, and community.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FIERCE · UMass CICS RAP">
+  <meta property="og:description" content="Fostering Inclusion by Engaging in Real-World Computing Education — an inclusive RAP for incoming CS and Informatics students at UMass Amherst.">
 </head>
 <body>
-    <h1>FIERCE</h1>
-    <p>Site under construction.</p>
+
+  <!-- nav -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="./index.html" class="logo" aria-label="FIERCE Home">
+          <img src="./images/fierce_tiger_sticker.png" alt="" class="logo-tiger" decoding="async" aria-hidden="true" />
+          <span class="logo-copy">
+            <span class="logo-text">FIERCE</span>
+            <span class="logo-tagline">Fostering Inclusion in Computing</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="nav-center" aria-label="Primary navigation">
+        <a href="./index.html" class="nav-link" aria-current="page">Home</a>
+        <a href="./programming.html" class="nav-link">Events</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="nav-cics">
+          <img src="./images/Manning_CICS-vert-b&w.png" alt="UMass Manning CICS" class="nav-cics-logo" />
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" type="button">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="./contact.html" class="cta-button">Apply Now</a>
+      </div>
+
+      <!-- hamburger -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" type="button">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+
+    <!-- mobile drawer -->
+    <div class="nav-drawer" id="nav-drawer">
+      <div class="nav-drawer-inner">
+        <nav class="nav-drawer-links" aria-label="Mobile navigation">
+          <a href="./index.html" class="nav-link" aria-current="page">Home</a>
+          <a href="./programming.html" class="nav-link">Events</a>
+          <a href="./contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-drawer-bottom">
+          <button class="theme-toggle" aria-label="Toggle light/dark mode" type="button">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <a href="./contact.html" class="cta-button">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- hero -->
+    <section class="hero hero-home">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            A UMass CICS Program
+          </span>
+
+          <h1>
+            <span class="hero-pretitle">Welcome to</span>
+            <span class="brand-word">FIERCE</span>
+          </h1>
+          <p class="hero-subtitle">
+            Fostering Inclusion by Engaging in Real-World Computing Education
+          </p>
+          <p class="hero-desc">
+            An inclusive Residential Academic Program for incoming Computer Science and Informatics students at UMass Amherst. Find your people, build real friendships, and discover your path in computing — together.
+          </p>
+          <div class="hero-actions">
+            <a href="./contact.html" class="btn btn-primary">Apply Now</a>
+            <a href="#about" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame">
+            <img
+              src="./images/bostonFullComference.jpeg"
+              alt="FIERCE students together at a conference in Boston"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- stats strip -->
+    <div class="stats-strip">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">2022</span>
+          <span class="stat-label">Year Founded</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="7">0</span>
+          <span class="stat-label">Peer Mentors</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="100" data-suffix="%">0%</span>
+          <span class="stat-label">Free to Join</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Community</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- about / mission -->
+    <section id="about" class="section alt">
+      <div class="container">
+        <span class="section-label">About the Program</span>
+        <h2>Mission &amp; History</h2>
+        <div class="split">
+          <div class="split-text">
+            <p>
+              FIERCE was founded in 2019 at UMass Amherst's College of Information and Computer Sciences (CICS) with one goal in mind: to make computing feel like home for students who might otherwise feel like they don't belong. We are an inclusive RAP that welcomes Women, LGBTQ+, BIPOC, and all students from communities underrepresented in tech.
+            </p>
+            <p>
+              Since launching in fall 2022, FIERCE has grown into a close-knit community of mentors and students who support one another through the challenges of first-year college life — not just academically, but personally. Because the best thing about FIERCE isn't the workshops or résumé tips. It's the friendships you make on your floor at 2am when you're debugging together.
+            </p>
+            <p>
+              We are proudly housed within UMass CICS and live together in Webster Hall, creating a unique live-learn environment where your classmates are also your neighbors.
+            </p>
+          </div>
+          <div class="split-photo">
+            <img
+              src="./images/boston2025ConferenceBoard.jpeg"
+              alt="FIERCE members at the 2025 Boston conference"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- community -->
+    <section id="community" class="section">
+      <div class="container">
+        <span class="section-label">Community First</span>
+        <h2>Find Your People</h2>
+        <div class="split" style="direction: rtl;">
+          <div class="split-photo" style="direction: ltr;">
+            <img
+              src="./images/groupMafia.jpeg"
+              alt="FIERCE students laughing together at a game night"
+            />
+          </div>
+          <div class="split-text" style="direction: ltr;">
+            <p>
+              Starting college is exciting — and a little terrifying. Moving to a new place, meeting new people, figuring out who you are. FIERCE is designed to make that transition feel less like a leap and more like a step, because you're taking it alongside people who get it.
+            </p>
+            <p>
+              Living on the same floor as your FIERCE cohort means late nights, inside jokes, coffee runs before 8am lectures, and friends who will still be texting you four years from now. We do plenty of structured things — workshops, speaker events, field trips — but the magic is in the unstructured moments in between.
+            </p>
+            <p>
+              Whether you're a social butterfly or more of an observer, FIERCE meets you where you are. There's no pressure to be a certain kind of student. Just come as you are, and let the community do the rest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- benefits -->
+    <section id="benefits" class="section alt">
+      <div class="container">
+        <span class="section-label">What You Get</span>
+        <h2>Benefits of Joining</h2>
+        <p class="section-lead">FIERCE gives you the people, resources, and experiences to make your first year one you'll actually look back on fondly.</p>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Live Together</strong>
+              <span>Share a floor in Webster Hall with your cohort — your academic community is also your home community.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Peer Mentorship</strong>
+              <span>Get guidance from older students who've navigated CICS and are genuinely rooting for you.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>FIERCE Seminar</strong>
+              <span>A specialized first-year course built specifically for FIERCE students to ease into college-level computing.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>One-on-One Tutoring</strong>
+              <span>Academic support throughout your first year — for courses, projects, or just when you feel stuck.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Industry Field Trips</strong>
+              <span>Visit Boston tech companies like Akamai and MathWorks and see what careers in computing actually look like.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Completely Free</strong>
+              <span>Every event, workshop, trip, and resource is free for FIERCE participants. No hidden costs.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <span class="section-label">Life in FIERCE</span>
+        <h2>See What We're About</h2>
+        <p class="section-lead">From conference trips to game nights to just hanging out — here's a look at what FIERCE actually looks like.</p>
+        <div class="photo-grid">
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/boston2025ComferenceMembers.jpeg" alt="FIERCE students at the 2025 conference in Boston" />
+          </div>
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/afterComference.jpeg" alt="FIERCE members after a conference" />
+          </div>
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/groupMafia.jpeg" alt="FIERCE students at game night" />
+          </div>
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/welcome_umass.jpeg" alt="Welcome event at UMass" />
+          </div>
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/boston2025ConferenceBoard.jpeg" alt="FIERCE conference board members" />
+          </div>
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/bostonFullComference.jpeg" alt="Full FIERCE group at Boston conference" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- team -->
+    <section id="team" class="section alt">
+      <div class="container">
+        <span class="section-label">The People Behind It</span>
+        <h2>Our Team</h2>
+        <p class="section-lead">FIERCE is run by students, for students. Click a card to learn more about each mentor.</p>
+
+        <div class="team-grid">
+
+          <!-- erika -->
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Erika Dawson-Head — program admin">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-role">Admin</span>
+                <span class="team-circle">
+                  <img loading="lazy" src="./images/mentor_photos/erika_dawson.jpg" alt="Erika Dawson-Head" class="team-photo team-photo--tight-crop" />
+                </span>
+                <span class="team-name">Erika Dawson-Head</span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back" aria-hidden="true">
+                <span class="team-role">About Erika</span>
+                <span class="team-bio">Erika guides FIERCE behind the scenes, supporting mentors and helping the program grow with intentionality and care.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+
+          <!-- edelson -->
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Edelson Garcia — office mentor">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-role">Office Mentor</span>
+                <span class="team-circle">
+                  <img loading="lazy" src="./images/mentor_photos/edelson_photo.jpg" alt="Edelson Garcia" class="team-photo team-photo--tight-crop" />
+                </span>
+                <span class="team-name">Edelson Garcia</span>
+                <span class="team-year">Class of '27</span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back" aria-hidden="true">
+                <span class="team-role">About Edelson</span>
+                <span class="team-bio">Edelson co-leads the mentor team and helps students work through projects, workshops, and their toughest technical questions.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+
+          <!-- anay -->
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Anay Liu — mentor">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-role">Mentor</span>
+                <span class="team-circle">
+                  <img loading="lazy" src="./images/mentor_photos/anay_Liu.jpeg" alt="Anay Liu" class="team-photo team-photo--tight-crop" />
+                </span>
+                <span class="team-name">Anay Liu</span>
+                <span class="team-year">Class of '27</span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back" aria-hidden="true">
+                <span class="team-role">About Anay</span>
+                <span class="team-bio">Anay helps students build confidence, ask questions early, and stay moving during workshops and collaborative projects.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+
+          <!-- caleb -->
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Caleb Richards — mentor">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-role">Mentor</span>
+                <span class="team-circle">
+                  <img loading="lazy" src="./images/mentor_photos/caleb_Richards.jpeg" alt="Caleb Richards" class="team-photo team-photo--tight-crop" />
+                </span>
+                <span class="team-name">Caleb Richards</span>
+                <span class="team-year">Class of '28</span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back" aria-hidden="true">
+                <span class="team-role">About Caleb</span>
+                <span class="team-bio">Caleb is an inclusive individual who loves everything from sports to web dev. He's passionate about helping new students feel at home at UMass.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+
+          <!-- arsen -->
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Arsen Sekmokas — mentor">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-role">Mentor</span>
+                <span class="team-circle">
+                  <img loading="lazy" src="./images/mentor_photos/arsen_Sekmokas.jpeg" alt="Arsen Sekmokas" class="team-photo team-photo--tight-crop" />
+                </span>
+                <span class="team-name">Arsen Sekmokas</span>
+                <span class="team-year">Class of '28</span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back" aria-hidden="true">
+                <span class="team-role">About Arsen</span>
+                <span class="team-bio">Arsen guides students through debugging, project planning, and the everyday challenges of learning to code for the first time.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+
+          <!-- august -->
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="August Singh — mentor">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-role">Mentor</span>
+                <span class="team-circle">
+                  <img loading="lazy" src="./images/mentor_photos/august.jpeg" alt="August Singh" class="team-photo team-photo--tight-crop" />
+                </span>
+                <span class="team-name">August Singh</span>
+                <span class="team-year">Class of '28</span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back" aria-hidden="true">
+                <span class="team-role">About August</span>
+                <span class="team-bio">August is a silly, non-binary math nerd who loves theory and making FIERCE feel like a place where everyone truly belongs.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+
+          <!-- Bhama -->
+          <button class="person person-card" type="button" aria-pressed="false" aria-label="Bhama Binu — mentor">
+            <span class="person-inner">
+              <span class="person-face person-front">
+                <span class="team-role">Mentor</span>
+                <span class="team-circle">
+                  <img loading="lazy" src="./images/mentor_photos/bhama_photo.jpg" alt="Bhama Binu" class="team-photo team-photo--tight-crop" />
+                </span>
+                <span class="team-name">Bhama Binu</span>
+                <span class="team-year">Class of '29</span>
+                <span class="team-hint">Click to learn more</span>
+              </span>
+              <span class="person-face person-back" aria-hidden="true">
+                <span class="team-role">About Bhama</span>
+                <span class="team-bio">Bhama is an artistic individual who likes to create tiny doodles and comics. She joined FIERCE to help create a safe, supportive community.</span>
+                <span class="team-hint">Click to flip back</span>
+              </span>
+            </span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- requirements -->
+    <section id="requirements" class="section">
+      <div class="container">
+        <span class="section-label">Who Can Join</span>
+        <h2>Requirements</h2>
+        <p class="section-lead">FIERCE is intentionally low-barrier. We care more about who you are than what you already know.</p>
+        <div class="benefits-grid" style="margin-top: 32px;">
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Incoming First-Years</strong>
+              <span>Open to students entering UMass Amherst as Computer Science or Informatics majors.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Curiosity Over Experience</strong>
+              <span>No prior coding experience required. We welcome students who are new to computing.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Open to Community</strong>
+              <span>Willingness to collaborate, show up for each other, and engage with program events.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-text">
+              <strong>Live on the FIERCE Floor</strong>
+              <span>Students must be willing to live in Webster Hall with the rest of the FIERCE cohort.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- faq -->
+    <section id="faqs" class="section alt">
+      <div class="container">
+        <span class="section-label">Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+
+          <details>
+            <summary>Who can apply?</summary>
+            <div class="faq-body">
+              <p>FIERCE is open to all incoming first-year students enrolled in or intending to study Computer Science or Informatics at UMass Amherst. We especially welcome students from underrepresented communities in tech — including women, LGBTQ+ individuals, BIPOC students, and anyone who wants a more supportive on-ramp into computing. You don't need any prior experience; just a genuine curiosity and openness to community.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>How much time should I expect to commit?</summary>
+            <div class="faq-body">
+              <p>FIERCE is designed to fit naturally into your first-year schedule. Most weeks, you'll have one or two optional events — a workshop, study session, speaker, or social hangout. There are a few anchor events each semester that we strongly encourage everyone to attend, but nothing is ever mandatory in a punishing way. The biggest commitment is simply choosing to live on the FIERCE floor and being present in the community.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>How do I apply?</summary>
+            <div class="faq-body">
+              <p>Fill out our interest form on the <a href="./contact.html" class="text-link">Contact page</a>. We'll follow up with more information before the fall semester begins. Applications are reviewed on a rolling basis, so filling it out early is a good idea. If you have questions in the meantime, feel free to email us directly at <a href="mailto:fiercementors@umass.edu" class="text-link">fiercementors@umass.edu</a>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Does it cost any money?</summary>
+            <div class="faq-body">
+              <p>Nope — completely free. Every event, workshop, field trip, and resource within FIERCE is provided at no cost to participants. Housing costs are standard UMass residential rates and are separate from program participation.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>What's the difference between FIERCE and a regular dorm?</summary>
+            <div class="faq-body">
+              <p>In a typical dorm, you share a building with students from all majors and have little built-in structure for connection. In FIERCE, your floor is intentionally your community — your neighbors are also your study partners, your mentors, and eventually your friends. You'll have shared programming, a dedicated mentorship team, and a cohort that's going through the same things you are, at the same time. It's a much more supported first-year experience.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- cta banner -->
+    <section class="section" style="text-align: center;">
+      <div class="container" style="max-width: 640px;">
+        <span class="section-label">Ready?</span>
+        <h2>Join FIERCE This Fall</h2>
+        <p class="section-lead" style="margin: 0 auto 32px;">Fill out the interest form to get updates and secure your spot in the FIERCE community.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="./contact.html" class="btn btn-primary">Fill Out the Interest Form</a>
+          <a href="./programming.html" class="btn btn-secondary">See Our Events</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div>
+          <span class="footer-brand-name">FIERCE</span>
+          <br>
+          <span class="footer-brand-sub">© <span id="year"></span> FIERCE Program · UMass Amherst</span>
+        </div>
+      </div>
+
+      <div class="footer-cics">
+        <span class="footer-cics-text">Part of the UMass Manning College of Information &amp; Computer Sciences</span>
+      </div>
+
+      <p class="footer-copy">Webster Hall · Amherst, MA</p>
+    </div>
+  </footer>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image preview">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lightbox-stage">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+    <span class="lightbox-counter" id="lightbox-counter"></span>
+  </div>
+
+  <!-- back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="./script.js"></script>
 </body>
 </html>

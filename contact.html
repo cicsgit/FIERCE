@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      var saved = localStorage.getItem('fierceTheme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <title>Contact — FIERCE · UMass CICS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="description" content="Connect with FIERCE — fill out the interest form or reach out directly to learn more about joining our Residential Academic Program (RAP).">
+</head>
+<body>
+
+  <!-- nav -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="./index.html" class="logo" aria-label="FIERCE Home">
+          <img src="./images/fierce_tiger_sticker.png" alt="" class="logo-tiger" decoding="async" aria-hidden="true" />
+          <span class="logo-copy">
+            <span class="logo-text">FIERCE</span>
+            <span class="logo-tagline">Fostering Inclusion in Computing</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="nav-center" aria-label="Primary navigation">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./programming.html" class="nav-link">Events</a>
+        <a href="./contact.html" class="nav-link" aria-current="page">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="nav-cics">
+          <img src="./images/Manning_CICS-vert-b&w.png" alt="UMass Manning CICS" class="nav-cics-logo" />
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" type="button">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="mailto:fiercementors@umass.edu" class="cta-button">Email Us</a>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" type="button">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+
+    <div class="nav-drawer" id="nav-drawer">
+      <div class="nav-drawer-inner">
+        <nav class="nav-drawer-links" aria-label="Mobile navigation">
+          <a href="./index.html" class="nav-link">Home</a>
+          <a href="./programming.html" class="nav-link">Events</a>
+          <a href="./contact.html" class="nav-link" aria-current="page">Contact</a>
+        </nav>
+        <div class="nav-drawer-bottom">
+          <button class="theme-toggle" aria-label="Toggle light/dark mode" type="button">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <a href="mailto:fiercementors@umass.edu" class="cta-button">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>
+            <span class="hero-pretitle">Reach Out</span>
+            <span class="brand-word">Contact Us</span>
+          </h1>
+          <p class="hero-desc">
+            Interested in joining FIERCE next fall? Start with the interest form — it takes two minutes and puts you on our radar. You can also reach us directly by email anytime.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSew4pa1JdKHlrvnweJweXvVA2nYrYq6j84JNCthol0vcb8Frw/viewform?usp=dialog"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fill Out Interest Form
+            </a>
+            <a href="mailto:fiercementors@umass.edu" class="btn btn-secondary">Email Us</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame">
+            <img
+              src="./images/welcome_umass.jpeg"
+              alt="Students at a UMass Amherst welcome event"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact details -->
+    <section class="section alt">
+      <div class="container">
+        <span class="section-label">Ways to Connect</span>
+        <h2>Get in Touch</h2>
+        <p class="section-lead">Whether you're a prospective student, a parent, or just curious — we'd love to hear from you.</p>
+
+        <div class="contact-grid">
+
+          <div class="card card-wide">
+            <h3>Interest Form</h3>
+            <p>
+              The best first step for prospective students. Fill out the form and we'll reach out with details about the program, housing, and next steps before the fall semester.
+            </p>
+            <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSew4pa1JdKHlrvnweJweXvVA2nYrYq6j84JNCthol0vcb8Frw/viewform?usp=dialog"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open Interest Form
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Email</h3>
+            <p>Have a specific question? Reach out to our mentor team directly.</p>
+            <p style="margin-top: 12px;">
+              <a href="mailto:fiercementors@umass.edu" class="text-link">
+                fiercementors@umass.edu
+              </a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Location</h3>
+            <p>FIERCE is based in Webster Hall on the UMass Amherst campus — where our students live and our community is built.</p>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.9rem;">
+              Webster Hall<br>
+              UMass Amherst, Amherst MA 01003
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- faq quick link -->
+    <section class="section">
+      <div class="container" style="max-width: 640px; text-align: center;">
+        <span class="section-label">Before You Reach Out</span>
+        <h2>Check the FAQs</h2>
+        <p class="section-lead" style="margin: 0 auto 28px;">
+          Many common questions about eligibility, costs, and how to apply are answered on the home page.
+        </p>
+        <a href="./index.html#faqs" class="btn btn-secondary">View FAQs</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div>
+          <span class="footer-brand-name">FIERCE</span>
+          <br>
+          <span class="footer-brand-sub">© <span id="year"></span> FIERCE Program · UMass Amherst</span>
+        </div>
+      </div>
+      <div class="footer-cics">
+        <span class="footer-cics-text">Part of the UMass Manning College of Information &amp; Computer Sciences</span>
+      </div>
+      <p class="footer-copy">Webster Hall · Amherst, MA</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="./script.js"></script>
+</body>
+</html>

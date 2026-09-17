@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      var saved = localStorage.getItem('fierceTheme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <title>Events — FIERCE · UMass CICS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <meta name="description" content="Explore FIERCE events — workshops, mentorship, conference trips, and social nights for computing students at UMass Amherst.">
+</head>
+<body>
+
+  <!-- nav -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="./index.html" class="logo" aria-label="FIERCE Home">
+          <img src="./images/fierce_tiger_sticker.png" alt="" class="logo-tiger" decoding="async" aria-hidden="true" />
+          <span class="logo-copy">
+            <span class="logo-text">FIERCE</span>
+            <span class="logo-tagline">Fostering Inclusion in Computing</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="nav-center" aria-label="Primary navigation">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./programming.html" class="nav-link" aria-current="page">Events</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="nav-cics">
+          <img src="./images/Manning_CICS-vert-b&w.png" alt="UMass Manning CICS" class="nav-cics-logo" />
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" type="button">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="./contact.html" class="cta-button">Apply Now</a>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" type="button">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+
+    <div class="nav-drawer" id="nav-drawer">
+      <div class="nav-drawer-inner">
+        <nav class="nav-drawer-links" aria-label="Mobile navigation">
+          <a href="./index.html" class="nav-link">Home</a>
+          <a href="./programming.html" class="nav-link" aria-current="page">Events</a>
+          <a href="./contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-drawer-bottom">
+          <button class="theme-toggle" aria-label="Toggle light/dark mode" type="button">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <a href="./contact.html" class="cta-button">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>
+            <span class="hero-pretitle">Explore</span>
+            <span class="brand-word">Events</span>
+          </h1>
+          <p class="hero-desc">
+            From technical workshops to Boston conference trips to low-key game nights — here's how FIERCE fills your first year with experiences worth having.
+          </p>
+          <div class="hero-actions">
+            <a href="./contact.html" class="btn btn-primary">Get Involved</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame">
+            <img
+              src="./images/boston2025ComferenceMembers.jpeg"
+              alt="FIERCE students at a 2025 conference in Boston"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- what to expect -->
+    <section class="section alt">
+      <div class="container">
+        <span class="section-label">What You'll Experience</span>
+        <h2>Three Pillars of FIERCE Programming</h2>
+        <p class="section-lead">Everything we do fits into one of three goals: build your skills, deepen your community, and show you what's out there.</p>
+        <ul class="cards" style="margin-top: 36px;">
+          <li class="card">
+            <h3>Workshops &amp; Learning</h3>
+            <p>Hands-on sessions covering practical computing skills — from debugging strategies to building your first web app. Led by mentors who've been in your exact seat.</p>
+          </li>
+          <li class="card">
+            <h3>Community &amp; Social</h3>
+            <p>Game nights, floor hangouts, group meals, and unplanned moments that turn hallmates into lifelong friends. The best FIERCE memories happen between the scheduled stuff.</p>
+          </li>
+          <li class="card">
+            <h3>Industry &amp; Exploration</h3>
+            <p>Field trips to Boston tech companies, guest speakers, and conference experiences that expand your sense of what computing can look like as a career.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- event spotlight -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label">In the Photos</span>
+        <h2>Event Spotlight</h2>
+        <p class="section-lead">A look at some of our recent events — the kind of things you'll be part of when you join FIERCE.</p>
+        <ul class="cards" style="margin-top: 36px;">
+          <li class="card">
+            <img loading="lazy" src="./images/groupMafia.jpeg" alt="FIERCE students playing Mafia game night" />
+            <h3>Game Night — Mafia</h3>
+            <p>A relaxed community night where FIERCE students play Mafia, laugh too loud, and discover who among them is secretly untrustworthy. The floor bonding starts here.</p>
+          </li>
+          <li class="card">
+            <img loading="lazy" src="./images/boston2025ComferenceMembers.jpeg" alt="FIERCE at the 2025 Robotics Summit in Boston" />
+            <h3>2025 Robotics Summit — Boston</h3>
+            <p>FIERCE students traveled to Boston to attend the Robotics Summit conference, connecting with industry professionals and exploring the cutting edge of tech.</p>
+          </li>
+          <li class="card">
+            <img loading="lazy" src="./images/afterComference.jpeg" alt="FIERCE members after the conference" />
+            <h3>After the Conference</h3>
+            <p>After a long day of panels and exhibits, the FIERCE crew explored the city together. These are the moments that stick with you long after the event ends.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- more photos -->
+    <section class="section alt">
+      <div class="container">
+        <span class="section-label">More from FIERCE</span>
+        <h2>More Photos from the Community</h2>
+        <div class="photo-grid" style="margin-top: 36px;">
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/bostonFullComference.jpeg" alt="Full FIERCE group at the Boston conference" />
+          </div>
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/boston2025ConferenceBoard.jpeg" alt="FIERCE conference board 2025" />
+          </div>
+          <div class="photo-grid-item">
+            <img loading="lazy" src="./images/welcome_umass.jpeg" alt="FIERCE welcome event at UMass Amherst" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- cta -->
+    <section class="section" style="text-align: center;">
+      <div class="container" style="max-width: 600px;">
+        <span class="section-label">Get Involved</span>
+        <h2>Want to Be FIERCE?</h2>
+        <p class="section-lead" style="margin: 0 auto 32px;">These events are waiting for you. Fill out the interest form and we'll be in touch before fall semester.</p>
+        <a href="./contact.html" class="btn btn-primary">Fill Out the Interest Form</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div>
+          <span class="footer-brand-name">FIERCE</span>
+          <br>
+          <span class="footer-brand-sub">© <span id="year"></span> FIERCE Program · UMass Amherst</span>
+        </div>
+      </div>
+      <div class="footer-cics">
+        <span class="footer-cics-text">Part of the UMass Manning College of Information &amp; Computer Sciences</span>
+      </div>
+      <p class="footer-copy">Webster Hall · Amherst, MA</p>
+    </div>
+  </footer>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image preview">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lightbox-stage">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+    <span class="lightbox-counter" id="lightbox-counter"></span>
+  </div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="./script.js"></script>
+</body>
+</html>
